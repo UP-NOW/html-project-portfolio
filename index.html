@@ -1,59 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Shreyas Jayan | Portfolio</title>
-  <!-- Linking styles (might switch fonts later if it looks off) -->
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreyas Jayan - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #e0e0e0; }
+    .parallax { background-attachment: fixed; background-size: cover; background-position: center; }
+    .section { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    @keyframes subtleGlow {
+      0% { text-shadow: 0 0 3px #3b82f6; }
+      50% { text-shadow: 0 0 8px #3b82f6; }
+      100% { text-shadow: 0 0 3px #3b82f6; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-subtleGlow { animation: subtleGlow 2s infinite; }
+    .animate-slideUp { animation: slideUp 1s ease-out forwards; }
+    .card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); transition: transform 0.3s ease; }
+    .card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+    .nav-link { transition: color 0.3s ease; }
+    .nav-link:hover { color: #3b82f6; }
+    .profile-img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .profile-img:hover { transform: scale(1.1); box-shadow: 0 0 20px #3b82f6; }
+  </style>
 </head>
-<body>
-  <div class="container">
-    
-    <!-- Sidebar area -->
-    <aside class="sidebar">
-      <div class="profile-pic">
-        <img src="assets/profile-placeholder.png" alt="Profile Picture">
+<body class="font-sans">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-80 p-4 z-10">
+    <div class="container mx-auto flex justify-center space-x-6">
+      <a href="#home" class="text-lg text-gray-300 nav-link">Home</a>
+      <a href="#about" class="text-lg text-gray-300 nav-link">About</a>
+      <a href="#education" class="text-lg text-gray-300 nav-link">Education</a>
+      <a href="#projects" class="text-lg text-gray-300 nav-link">Projects</a>
+      <a href="#skills" class="text-lg text-gray-300 nav-link">Skills</a>
+      <a href="#contact" class="text-lg text-gray-300 nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section parallax" style="background-image: url('https://source.unsplash.com/random/1920x1080?tech');">
+    <div class="text-center animate-slideUp">
+      <img src="passport-photo.jpg" alt="Shreyas Jayan" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover profile-img">
+      <h1 class="text-5xl font-bold text-white animate-subtleGlow">Shreyas Jayan</h1>
+      <p class="text-xl text-gray-300">CSE Student | Code Enthusiast</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section bg-gray-900">
+    <div class="container mx-auto px-4 animate-slideUp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-6 animate-subtleGlow">Who Am I?</h2>
+      <div class="card p-8 rounded-xl">
+        <p class="text-lg">I'm Shreyas, a B.Tech CSE student at Amrita Vishwa Vidyapeetham. I live for the thrill of coding—turning ideas into reality with Python and Java. Whether it's building apps or solving tech puzzles, I’m all about finding clean, efficient solutions. My friends call me the go-to tech wizard, and I’m always up for a challenge.</p>
       </div>
-      <h1>Shreyas Jayan</h1>
-      <p>B.Tech CSE Core @ Amrita</p>
+    </div>
+  </section>
 
-      <!-- site nav -->
-      <nav>
-        <a href="education.html">Education</a>
-        <a href="project.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </aside>
+  <!-- Education Section -->
+  <section id="education" class="section parallax" style="background-image: url('https://source.unsplash.com/random/1920x1080?code');">
+    <div class="container mx-auto px-4 animate-slideUp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-6 animate-subtleGlow">Education</h2>
+      <div class="card p-8 rounded-xl mb-6">
+        <h3 class="text-2xl font-semibold text-white">B.Tech Computer Science & Engineering</h3>
+        <p class="text-gray-300">Amrita Vishwa Vidyapeetham, Amritapuri</p>
+        <p class="text-gray-300">2023 – Present</p>
+        <p class="mt-2">Diving deep into algorithms, systems, and coding in my second semester.</p>
+      </div>
+      <div class="card p-8 rounded-xl">
+        <h3 class="text-2xl font-semibold text-white">Higher Secondary (PCM + CS)</h3>
+        <p class="text-gray-300">CBSE Board</p>
+        <p class="mt-2">Mastered the basics of math, physics, and programming.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Main profile content -->
-    <main class="main-content">
+  <!-- Projects Section -->
+  <section id="projects" class="section bg-gray-900">
+    <div class="container mx-auto px-4 animate-slideUp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-6 animate-subtleGlow">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card p-6 rounded-xl">
+          <h3 class="text-xl font-semibold text-white">Calculator App</h3>
+          <p class="text-gray-300">Python, Tkinter</p>
+          <p class="mt-2">A minimalist calculator with core operations, expanding to include scientific functions.</p>
+        </div>
+        <div class="card p-6 rounded-xl">
+          <h3 class="text-xl font-semibold text-white">Snake Game</h3>
+          <p class="text-gray-300">Python, Pygame</p>
+          <p class="mt-2">Retro Snake game in development, focusing on smooth gameplay and controls.</p>
+        </div>
+        <div class="card p-6 rounded-xl">
+          <h3 class="text-xl font-semibold text-white">We Link</h3>
+          <p class="text-gray-300">Collaborative Project</p>
+          <p class="mt-2">A platform to boost college event visibility, currently sketching out the backend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section class="card">
-        <h2>About Me</h2>
-        <p>
-          Hey! I’m Shreyas — currently in my second sem doing CSE at Amrita. I’m really into coding (esp. <strong>Java</strong>, <strong>Python</strong>, and <strong>SQL</strong>). Not too keen on frontend tbh, but I love the backend logic stuff.
-        </p>
-        <p>
-          I kinda became the unofficial tech support guy among friends. From random app mods to debugging weird errors, I genuinely enjoy figuring things out fast and efficiently.
-        </p>
-      </section>
+  <!-- Skills Section -->
+  <section id="skills" class="section parallax" style="background-image: url('https://source.unsplash.com/random/1920x1080?programming');">
+    <div class="container mx-auto px-4 animate-slideUp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-6 animate-subtleGlow">Skills</h2>
+      <div class="card p-8 rounded-xl">
+        <p class="text-lg mb-2"><strong>Tech Stack:</strong> Java, Python, SQL, C, HTML, CSS, Tkinter, Pygame</p>
+        <p class="text-lg mb-2"><strong>Strengths:</strong> Rapid debugging, system optimization, creative problem-solving</p>
+        <p class="text-lg">I thrive on simplifying complex tasks and tweaking systems for efficiency.</p>
+      </div>
+    </div>
+  </section>
 
-      <section class="card">
-        <h2>My Vision</h2>
-        <p>
-          Right now, I’m working with a few teammates on something called <strong>We Link</strong> — basically a platform to help students across colleges find out about events, fests, and similar stuff. Still early stage, but we're hyped about it.
-        </p>
-      </section>
+  <!-- Contact Section -->
+  <section id="contact" class="section bg-gray-900">
+    <div class="container mx-auto px-4 animate-slideUp">
+      <h2 class="text-4xl font-bold text-blue-500 mb-6 animate-subtleGlow">Get in Touch</h2>
+      <div class="card p-8 rounded-xl">
+        <p class="text-lg mb-2"><strong>Email:</strong> <a href="mailto:[email protected]" class="text-blue-500 hover:underline">[email protected]</a></p>
+        <p class="text-lg mb-2"><strong>Phone:</strong> +91-7025098628</p>
+        <p class="text-lg mb-2"><strong>GitHub:</strong> <a href="https://github.com/UP-NOW" class="text-blue-500 hover:underline">github.com/UP-NOW</a></p>
+        <p class="text-lg"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/shreyas-jayan" class="text-blue-500 hover:underline">linkedin.com/in/shreyas-jayan</a></p>
+      </div>
+    </div>
+  </section>
 
-      <section class="card">
-        <h2>Links</h2>
-        <!-- might add resume link later -->
-        <p>
-          <a href="https://github.com/UP-NOW" target="_blank">GitHub</a> |
-          <a href="https://www.linkedin.com/in/shreyas-jayan-5b1629322/" target="_blank">LinkedIn</a>
-        </p>
-      </section>
-
-    </main>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-80 p-6 text-center text-gray-300">
+    <p>© 2025 Shreyas Jayan. Built with code and curiosity.</p>
+  </footer>
 </body>
 </html>
